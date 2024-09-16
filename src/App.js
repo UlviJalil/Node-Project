@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react"
+import Header from "./featured/Header/header";
+import Main from "./featured/Main/main"
+import Subscribe from "./components/Subscribe.jsx"
+import Services from "./components/Services.jsx"
+import Footer from "./featured/Footer/footer"
+import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../src/i18n.js'; // Import the i18n configuration
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <I18nextProvider i18n={i18n}>
+        <Header />
+      </I18nextProvider>
+      <Main />
+      <Subscribe />
+      <Services />
+      <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
